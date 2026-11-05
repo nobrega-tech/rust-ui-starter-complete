@@ -1,0 +1,27 @@
+[tools]
+rust = "stable"
+"cargo:dioxus-cli" = "latest"   # binário `dx`; o README instala com `cargo install dioxus-cli --locked`
+
+[tasks.web]
+description = "Serve the web app"
+run = "dx serve --platform web --package starter-app"
+
+[tasks.desktop]
+description = "Serve the desktop app"
+run = "dx serve --platform desktop --package starter-app"
+
+[tasks.check]
+description = "Type-check the whole workspace"
+run = "cargo check --workspace"
+
+[tasks.fmt]
+description = "Check formatting"
+run = "cargo fmt --all --check"
+
+[tasks.clippy]
+description = "Lint all targets"
+run = "cargo clippy --workspace --all-targets"
+
+[tasks.validate]
+description = "Run all validation steps from the README"
+depends = ["check", "fmt", "clippy"]
