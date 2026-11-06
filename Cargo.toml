@@ -1,11 +1,12 @@
 [workspace]
 resolver = "2"
 members = [
-    "apps/app",
+    "apps/web",
+    "apps/desktop",
     "crates/core",
     "crates/design-system",
 ]
-exclude = ["crates/api"]
+exclude = ["apps/api", "crates/api"]
 
 [workspace.package]
 edition = "2024"
