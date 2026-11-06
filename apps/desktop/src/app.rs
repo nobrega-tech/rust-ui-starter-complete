@@ -31,7 +31,7 @@ pub fn App() -> Element {
     rsx! {
         document::Stylesheet { href: asset!("/assets/tailwind.css") }
         div {
-            class: "{theme_class} min-h-screen bg-background text-foreground",
+            class: "{theme_class} min-h-screen select-none bg-background text-foreground",
             div {
                 class: "flex min-h-screen",
                 Sidebar {

@@ -4,11 +4,11 @@ rust = "stable"
 
 [tasks.web]
 description = "Serve the web app"
-run = "dx serve --platform web --package starter-app"
+run = "dx serve --platform web --package starter-web"
 
 [tasks.desktop]
 description = "Serve the desktop app"
-run = "dx serve --platform desktop --package starter-app"
+run = "dx serve --platform desktop --package starter-desktop"
 
 [tasks.check]
 description = "Type-check the whole workspace"

@@ -1,5 +1,5 @@
 [package]
-name = "starter-app"
+name = "starter-web"
 version.workspace = true
 edition.workspace = true
 license.workspace = true

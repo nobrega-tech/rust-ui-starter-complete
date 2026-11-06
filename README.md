@@ -51,7 +51,7 @@ cargo clippy --workspace --all-targets
 
 ## Tailwind CSS 4
 
-`apps/app/tailwind.css` is the input stylesheet. Dioxus CLI integrates the Tailwind watcher during `dx serve` when it detects the stylesheet. Generated CSS is written under `apps/app/assets/`.
+`apps/web/tailwind.css` and `apps/desktop/tailwind.css` are the input stylesheets. Dioxus CLI integrates the Tailwind watcher during `dx serve` when it detects the stylesheet. Generated CSS is written under each app's `assets/` folder.
 
 If your installed CLI does not detect the stylesheet automatically, check the current Dioxus Tailwind setup documentation for the version you installed.
 
@@ -76,7 +76,9 @@ The API is intentionally not connected to the frontend. Add an API client at the
 
 ## Architecture rules
 
-- `apps/app`: composition root, app shell, navigation and pages.
+- `apps/web`: web composition root (Dioxus web target), app shell, navigation and pages.
+- `apps/desktop`: desktop composition root (Dioxus desktop target), app shell, navigation and pages.
+- `apps/api`: optional server application (excluded from the workspace); do not place UI code here.
 - `crates/design-system`: reusable visual components and theme tokens.
 - `crates/core`: domain models and application-level rules; no Dioxus dependency.
 - `crates/api`: optional server application; do not place UI code here.
